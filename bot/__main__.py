@@ -62,18 +62,18 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/harshpreets63/Mirror-Bot")
-    buttons.buildbutton("Channel", "https://t.me/HarshMirror")
+    buttons.buildbutton("Repo", "https://github.com/TG-Tarun/Mirror-Bot")
+    buttons.buildbutton("Index", "https://tjworld.moviesbytarun.workers.dev")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive!
+Hi there, This is Tarun. This bot can mirror all your links to Tarun's Google Drive Index!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'Oops! not a Authorized user.\nPlease join our Channel.\nOr Host Your Own Bot Using My Repo.',
+            'Oops! not an Authorized user.\nPlease join our Channel.\nOr Host Your Own Bot Using My Repo.',
             context.bot,
             update,
             reply_markup,
